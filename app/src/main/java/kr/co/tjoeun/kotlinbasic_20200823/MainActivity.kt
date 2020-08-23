@@ -36,6 +36,18 @@ class MainActivity : AppCompatActivity() {
 
 //            변수에 저장된 문구를 => 토스트의 재료로 사용
             Toast.makeText(this, inputContent, Toast.LENGTH_SHORT).show()
+
+            Log.d("메인화면", inputContent)
+        }
+
+        changeTextBtn.setOnClickListener {
+//            messageEdt에 저장된 문구를 string으로 받아서 (get)
+
+            val inputMessage = messageEdt.text.toString()
+
+//            reslutTxt의 문구(text 속성의 값)로 반영 (set)
+
+            resultTxt.text = inputMessage
         }
 
     }
