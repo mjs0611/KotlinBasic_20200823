@@ -31,13 +31,31 @@ class MainActivity : AppCompatActivity() {
 
 //        입력한 문구를 받아서 => 토스트로 출력
         contentToastBtn.setOnClickListener {
-//            contentEdt의 문구 (text 속성의 값) => (Sring으로) 받아서 => 코틀린 변수에 저장
+////            contentEdt의 문구 (text 속성의 값) => (Sring으로) 받아서 => 코틀린 변수에 저장
+//            val inputContent = contentEdt.text.toString()
+//
+////            변수에 저장된 문구를 => 토스트의 재료로 사용
+//            Toast.makeText(this, inputContent, Toast.LENGTH_SHORT).show()
+
+
+//            입력된 문구가 "안녕하세요"라고 입력되었다면 => "인사" 라고 토스트 출력
             val inputContent = contentEdt.text.toString()
 
-//            변수에 저장된 문구를 => 토스트의 재료로 사용
-            Toast.makeText(this, inputContent, Toast.LENGTH_SHORT).show()
+            when (inputContent) {
+                "안녕하세요" -> {
+                    Toast.makeText(this, "인사", Toast.LENGTH_SHORT).show()
+                }
+                "안녕히 가세요" -> {
+                    Toast.makeText(this, "작별인사", Toast.LENGTH_SHORT).show()
+                }
+                "맛있게 드세요" -> {
+                    Toast.makeText(this, "식사 인사", Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                    Toast.makeText(this, "그 외의 문장", Toast.LENGTH_SHORT).show()
+                }
+            }
 
-            Log.d("메인화면", inputContent)
         }
 
         changeTextBtn.setOnClickListener {
@@ -49,6 +67,8 @@ class MainActivity : AppCompatActivity() {
 
             resultTxt.text = inputMessage
         }
+
+
 
     }
 }
