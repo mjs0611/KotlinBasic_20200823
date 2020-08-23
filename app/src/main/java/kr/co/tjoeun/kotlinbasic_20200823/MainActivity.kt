@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         makeLogBtn.setOnClickListener {
             Log.d("메인화면", "로그 남기기 버튼 눌림")
+            Log.e("메인화면", "실행되면 안되는 코드에 대해 실행")
+
         }
 
     }
