@@ -68,7 +68,16 @@ class MainActivity : AppCompatActivity() {
             resultTxt.text = inputMessage
         }
 
+        greetingBtn.setOnClickListener {
+//            입력된 이름을 가지고 "안녕하세요 저느 ~~입니다." 문장 출력
 
+            val inputName = nameEdt.text.toString()
+
+            val printMessage = "안녕하세요 저는 ${inputName}입니다."
+
+            Toast.makeText(this, printMessage, Toast.LENGTH_SHORT).show()
+
+        }
 
     }
 }
